@@ -1,0 +1,33 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  gender: String!
+  age: Int!
+  weightClass: String!
+  role: String!
+  logs: [Log!]!
+}
+
+type RegisterResponse {
+  ok: Boolean!
+  user: User
+  errors: [Error!]
+}
+
+type Query {
+  users: [User!]!
+  user(id: ID!): User!
+}
+
+type Mutation {
+  register(
+    name: String!
+    email: String!
+    password: String!
+    gender: String!
+    age: Int!
+    weightClass: String!
+    role: String
+  ): RegisterResponse
+}

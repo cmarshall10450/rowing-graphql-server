@@ -1,0 +1,6 @@
+type Log {
+  Id: ID!
+  user: User!
+  distance: Int
+  comments: String
+}
